@@ -1,0 +1,154 @@
+@import "~bootstrap/scss/bootstrap";
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: #E5E5E5;  
+}
+
+.nav-menu {
+  height: 64px;
+  width: 100%;
+  background: blue;
+  color: blue;
+}
+.navbar {
+  position: sticky;
+  width: 100%;
+}
+.tasks {
+   justify-content: left; 
+}
+
+.container {  
+  width: 100%;
+}
+
+.picture {
+  height: 32px;
+  width: 32px;
+
+}
+.logo {
+  width: 18px;
+  height: 23px;
+  margin-right: 42px;
+  padding: 0;
+}
+
+.graham {
+  float: right;
+}
+
+.account {
+  align-items: flex-end;
+  display: flex;
+  width: 50%;
+  
+}
+
+.lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;  
+}
+
+.form-group {
+  display: flex;
+  margin-top: 10px;
+}
+
+.left-side {
+  background-color: #550DC9;  
+  height: 100vh;  
+  width: 52px;
+  float: left;
+  margin-right: 24px;
+
+}
+
+.right-side {   
+  margin-right: 24px;
+  flex: 1; 
+}
+
+// .width {
+//   display: flex;
+//   margin: 24px;
+//   height: 100vh; 
+// }
+.middle-side {
+  flex: 2;
+  margin-right: 64px;
+}
+.sidebar-icon {
+  margin-top: 24px;
+}
+
+// .todo-row {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin: 4px auto;
+//   color: #373737;
+//   padding: 16px, 12px;
+//   border-radius: 4px;  
+//   width: 90%;
+// }
+// ------------------icons------------
+.delete-icon {
+  color: #FF6363;
+  height: 20px;
+  width: 20px;
+}
+
+.edit-icon {
+  color: #5A7FFF;
+  height: 20px;
+  width: 20px;
+  margin: 15px;
+}
+
+.save-icon {
+  height: 20px;
+  width: 20px;
+  color: #A3A3A3;
+}
+
+
+// .form-control {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin: 4px auto;
+//   color: #373737;
+//   padding: 16px, 12px;
+//   border-radius: 4px;
+// }
+
+
+.list-group-item {
+  display: flex;
+  float: left;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #373737;
+  padding: 16px, 12px;
+  border-radius: 4px;  
+  width: 90%;
+}
+
+
+
+.complete {
+  text-decoration: line-through;  
+}
