@@ -4,7 +4,7 @@ import { Navbar } from 'react-bootstrap'
 
 const SideBar = () => {
     return (
-        <div className='left-side'>
+        <div className='sidebar'>
           <Navbar expand={false}>
             <div className='sidebar-icon'><BsListUl color="white" size={52}  /></div>
           </Navbar>

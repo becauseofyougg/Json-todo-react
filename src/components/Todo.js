@@ -3,12 +3,13 @@ import TodoForm from './TodoForm';
 import {  BiEdit } from 'react-icons/bi'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import { FormCheck } from 'react-bootstrap'
-import { VscSaveAll } from 'react-icons/vsc'
+// import { VscSaveAll } from 'react-icons/vsc'
 
 
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 
+  
   const [edit, setEdit] = useState({
     id: null,
     value: ''
@@ -27,38 +28,30 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   }
 
   return <div>
-  {todos.map((todo) => (
+  {todos.map(todo => (
     <div
-    className={todo.finished ? "list-group-item lists complete" : "list-group-item lists" }
+    className={todo.finished ? "list-group-item  complete" : "list-group-item " }
     key={todo.id}
     >
-    <div>
-     </div>
-    <div      
-      key={todo.id}
-    >
-      <div className='text-item'
-      key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.title}
-      </div>
-      <FormCheck    
+      <FormCheck         
       checked={todo.finished}
       onClick={() => completeTodo(todo.id)}
        />
+       <div className='text-item'
+       key={todo.id} onClick={() => completeTodo(todo.id)}>
+         {todo.title}
+       </div>
       <div className='icons'>        
         <RiDeleteBin6Line
           onClick={() => removeTodo(todo.id)}
           className='delete-icon'
-        />
-        <BiEdit
+        />        
+        <BiEdit 
           onClick={() => setEdit({ id: todo.id, value: todo.title })}
-          className='edit-icon'
-        />
-        <VscSaveAll className='save-icon'
-        onClick={() => removeTodo(todo.id)}        
+          className={todo.finished ? "edit-icon" : "edit-icon active"}
         />
       </div>
-    </div>
+
     </div>
     ))
   }

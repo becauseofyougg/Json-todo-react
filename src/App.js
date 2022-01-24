@@ -7,7 +7,7 @@ import SideBar from './components/SideBar';
 function App() {
 
   return (        
-    <div className="wrapper">     
+    <div className="max-width">     
       <NavbarMenu />       
       <SideBar />
       <TodoList />

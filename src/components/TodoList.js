@@ -5,7 +5,8 @@ import Todo from './Todo';
 
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]); 
+
   const url = 'http://localhost:8000/hashtags';
 
   useEffect(()=>{
@@ -58,9 +59,9 @@ const addTodo = todo => {
 
   const completeTodo = id => {
     let updatedTodos = todos.map(todo => {
-      if (todo.id === id) {
-        todo.finished = !todo.finished;
-      }
+     if (todo.id === id) {
+      todo.finished = !todo.finished;           
+      }      
       return todo;
     });
     setTodos(updatedTodos);
@@ -70,23 +71,27 @@ const addTodo = todo => {
   const uncompleted = todos.filter(e => e.finished === false)
 
   return (
-    <div className='middle-side'>      
+    <div className='wrapper'>
+      <div className='left-side'>
+        
       <TodoForm onSubmit={addTodo} />
-      <p>Total: {todos.length}</p>
-      <p>Uncompleted: {uncompleted.length}</p>
-      <Todo
+      <h2>Total: {todos.length}</h2>
+      <h3>To do({uncompleted.length})</h3>
+      <Todo 
         todos={uncompleted}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
         updateTodo={updateTodo} 
         />
-        <p>Completed: {completed.length}</p>
+      </div>
+      
+      <div className='right-side'>
+        <h3>Completed: {completed.length}</h3>
         <Todo
-        todos={completed}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}        
+        todos={completed}        
+        removeTodo={removeTodo}               
         />
+      </div>
     </div>
   );
 }

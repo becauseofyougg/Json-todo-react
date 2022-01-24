@@ -17,11 +17,10 @@ function TodoForm(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     props.onSubmit({      
       id: new Date(),
       title: input,
-      finished: false    
+      finished: false
     });
     setInput('');
   };
