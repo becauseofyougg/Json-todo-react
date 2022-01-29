@@ -89,7 +89,8 @@ const addTodo = todo => {
         <h3>Completed: {completed.length}</h3>
         <Todo
         todos={completed}        
-        removeTodo={removeTodo}               
+        removeTodo={removeTodo}
+        completeTodo={completeTodo} 
         />
       </div>
     </div>
