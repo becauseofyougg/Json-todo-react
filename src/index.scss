@@ -1,5 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
 
+$width: 768px;
+
+@mixin mobile {
+    @media (max-width: #{$width}){
+        @content
+    }
+}
+
 // -----colors------------
 $blue: #550DC9;
 
@@ -76,6 +84,10 @@ body {
   .wrapper {
     display: flex;    
     width: calc(100% - 4rem);
+
+    @include mobile{
+      display: block;
+    }
 
     h2 {
       margin: 8px auto;
@@ -169,3 +181,4 @@ body {
 .active {
   display: inline-block;
 }
+
